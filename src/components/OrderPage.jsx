@@ -73,7 +73,7 @@ Ville: ${formData.ville}
 
 *Voir l'image:* ${product.url}`
 
-      const phoneNumber = '237675896537'
+      const phoneNumber = '237656173692'
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageTexte)}`
 
       window.open(whatsappUrl, '_blank')
@@ -98,9 +98,9 @@ Ville: ${formData.ville}
   }
 
   const dimensions = product.dimensions || {}
-  const L = dimensions.longueur ? (dimensions.longueur / 100).toFixed(2) : null
-  const l = dimensions.largeur ? (dimensions.largeur / 100).toFixed(2) : null
-  const h = dimensions.hauteur ? (dimensions.hauteur / 100).toFixed(2) : null
+  const L = dimensions.longueur ? dimensions.longueur : null
+  const l = dimensions.largeur ? dimensions.largeur : null
+  const h = dimensions.hauteur ? dimensions.hauteur : null
 
   return (
     <div className='order-page-wrapper'>
