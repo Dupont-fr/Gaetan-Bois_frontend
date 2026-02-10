@@ -1,0 +1,246 @@
+import React, { useState } from 'react'
+import { Link } from 'react-router'
+import './styles/Navbar.css'
+
+const Navbar = ({ categories }) => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [categoriesOpen, setCategoriesOpen] = useState(false)
+
+  const toggleMenu = () => setMenuOpen(!menuOpen)
+  const closeMenu = () => {
+    setMenuOpen(false)
+    setCategoriesOpen(false)
+  }
+  const toggleCategories = () => setCategoriesOpen(!categoriesOpen)
+
+  // Composant pour l'icône de dossier (couleur bleue)
+  const FolderIcon = () => (
+    <svg
+      width='16'
+      height='16'
+      viewBox='0 0 24 24'
+      fill='#667eea'
+      style={{ verticalAlign: 'middle', marginRight: '8px' }}
+    >
+      <path d='M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z' />
+    </svg>
+  )
+
+  // Composant pour l'icône d'enveloppe (couleur rouge)
+  const EmailIcon = () => (
+    <svg
+      width='16'
+      height='16'
+      viewBox='0 0 24 24'
+      fill='#e53e3e'
+      style={{ verticalAlign: 'middle', marginRight: '8px' }}
+    >
+      <path d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z' />
+    </svg>
+  )
+
+  // Composant pour l'icône de document (couleur orange)
+  const DocumentIcon = () => (
+    <svg
+      width='16'
+      height='16'
+      viewBox='0 0 24 24'
+      fill='#dd6b20'
+      style={{ verticalAlign: 'middle', marginRight: '8px' }}
+    >
+      <path d='M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z' />
+    </svg>
+  )
+
+  // Composant pour l'icône de cadenas (couleur violette)
+  const LockIcon = () => (
+    <svg
+      width='16'
+      height='16'
+      viewBox='0 0 24 24'
+      fill='#805ad5'
+      style={{ verticalAlign: 'middle', marginRight: '8px' }}
+    >
+      <path d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z' />
+    </svg>
+  )
+
+  // Composant pour l'icône de point d'interrogation (couleur bleue)
+  const QuestionMarkIcon = () => (
+    <svg
+      width='16'
+      height='16'
+      viewBox='0 0 24 24'
+      fill='#4299e1'
+      style={{ verticalAlign: 'middle', marginRight: '8px' }}
+    >
+      <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z' />
+    </svg>
+  )
+
+  // Composant pour l'icône de fermeture (couleur grise)
+  const CloseIcon = () => (
+    <svg
+      width='20'
+      height='20'
+      viewBox='0 0 24 24'
+      fill='#4a5568'
+      style={{ display: 'block', margin: '0 auto' }}
+    >
+      <path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z' />
+    </svg>
+  )
+
+  return (
+    <>
+      <nav className='navbar'>
+        <div className='navbar-container'>
+          <Link to='/' className='navbar-logo' onClick={closeMenu}>
+            <div className='logo-container'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 100 100'
+                className='logo-svg'
+              >
+                <circle cx='50' cy='50' r='45' fill='#8B5A2B' />
+                <rect
+                  x='20'
+                  y='30'
+                  width='60'
+                  height='40'
+                  rx='5'
+                  fill='#654321'
+                />
+                <ellipse
+                  cx='50'
+                  cy='50'
+                  rx='20'
+                  ry='10'
+                  stroke='#D4A76A'
+                  strokeWidth='2'
+                  fill='none'
+                />
+                <ellipse
+                  cx='50'
+                  cy='50'
+                  rx='12'
+                  ry='6'
+                  stroke='#D4A76A'
+                  strokeWidth='1.5'
+                  fill='none'
+                />
+                <path
+                  d='M35 30 L65 30 M50 20 L50 40'
+                  stroke='#D4AF37'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                />
+                <text
+                  x='50'
+                  y='80'
+                  textAnchor='middle'
+                  fontFamily='Georgia, serif'
+                  fontSize='14'
+                  fontWeight='bold'
+                  fill='#FFFFFF'
+                >
+                  GB
+                </text>
+              </svg>
+              <span className='logo-text'>GAETAN BOIS</span>
+            </div>
+          </Link>
+
+          <div className='navbar-links'>
+            <Link to='/categories' className='nav-link'>
+              Catégories
+            </Link>
+            <Link to='/contact' className='nav-link'>
+              Contact
+            </Link>
+            <Link to='/conditions' className='nav-link'>
+              Conditions
+            </Link>
+            <Link to='/confidentialite' className='nav-link'>
+              Confidentialité
+            </Link>
+            <Link to='/faq' className='nav-link'>
+              FAQ
+            </Link>
+          </div>
+
+          <button className='hamburger' onClick={toggleMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+
+      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+        <div className='mobile-menu-header'>
+          <h2>Menu</h2>
+          <button className='close-btn' onClick={closeMenu}>
+            <CloseIcon />
+          </button>
+        </div>
+
+        <div className='mobile-menu-content'>
+          <div className='menu-item'>
+            <button className='menu-link' onClick={toggleCategories}>
+              <span style={{ display: 'flex', alignItems: 'center' }}>
+                <FolderIcon />
+                Catégories
+              </span>
+              <span className='arrow'>{categoriesOpen ? '▼' : '▶'}</span>
+            </button>
+
+            {categoriesOpen && (
+              <div className='submenu'>
+                {categories.map((category) => (
+                  <Link
+                    key={category.id}
+                    to={`/category/${category.slug}`}
+                    className='submenu-link'
+                    onClick={closeMenu}
+                  >
+                    {category.nom}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <Link to='/contact' className='menu-link' onClick={closeMenu}>
+            <span style={{ display: 'flex', alignItems: 'center' }}>
+              <EmailIcon />
+              Contact
+            </span>
+          </Link>
+          <Link to='/conditions' className='menu-link' onClick={closeMenu}>
+            <span style={{ display: 'flex', alignItems: 'center' }}>
+              <DocumentIcon />
+              Conditions
+            </span>
+          </Link>
+          <Link to='/confidentialite' className='menu-link' onClick={closeMenu}>
+            <span style={{ display: 'flex', alignItems: 'center' }}>
+              <LockIcon />
+              Confidentialité
+            </span>
+          </Link>
+          <Link to='/faq' className='menu-link' onClick={closeMenu}>
+            <span style={{ display: 'flex', alignItems: 'center' }}>
+              <QuestionMarkIcon />
+              FAQ
+            </span>
+          </Link>
+        </div>
+      </div>
+
+      {menuOpen && <div className='overlay' onClick={closeMenu}></div>}
+    </>
+  )
+}
+
+export default Navbar

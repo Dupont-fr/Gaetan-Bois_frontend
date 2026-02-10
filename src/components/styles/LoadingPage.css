@@ -1,0 +1,156 @@
+/* Reset et styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Logo principal */
+.logo-container {
+  margin-bottom: 40px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.main-logo {
+  width: 150px;
+  height: 150px;
+  filter: drop-shadow(0 10px 20px rgba(139, 90, 43, 0.3));
+}
+
+/* Animation de chargement style Facebook */
+.loading-animation {
+  width: 100%;
+  max-width: 300px;
+}
+
+.loading-bar-container {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.loading-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #8b5a2b 0%, #d4a76a 50%, #8b5a2b 100%);
+  animation: loading 3.5s ease-in-out forwards;
+  border-radius: 4px;
+}
+
+.loading-text {
+  color: #333;
+  font-size: 16px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+  opacity: 0.8;
+  animation: pulse 2s infinite;
+}
+
+/* Animations */
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 20%;
+  }
+  30% {
+    width: 40%;
+  }
+  50% {
+    width: 60%;
+  }
+  70% {
+    width: 80%;
+  }
+  90% {
+    width: 90%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .loading-content {
+    padding: 15px;
+  }
+
+  .main-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .loading-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .loading-bar-container {
+    height: 3px;
+  }
+
+  .loading-text {
+    font-size: 13px;
+  }
+
+  .logo-container {
+    margin-bottom: 30px;
+  }
+}
