@@ -5,7 +5,7 @@
 }
 
 .faq-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #eb9b46 0%, #5c3206 100%);
   color: white;
   text-align: center;
   padding: 50px 20px;
@@ -39,7 +39,7 @@
   color: #2d3748;
   margin: 0 0 20px;
   padding-bottom: 10px;
-  border-bottom: 3px solid #667eea;
+  border-bottom: 3px solid #b0630f;
 }
 
 .faq-item {
@@ -72,13 +72,13 @@
 }
 
 .faq-question:hover {
-  color: #667eea;
+  color: #b0630f;
 }
 
 .faq-icon {
   font-size: 24px;
   font-weight: 300;
-  color: #667eea;
+  color: #b0630f;
   min-width: 30px;
   text-align: center;
   transition: transform 0.3s;
@@ -101,7 +101,7 @@
 }
 
 .faq-contact {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #eb9b46 0%, #5c3206 100%);
   color: white;
   text-align: center;
   padding: 40px 20px;

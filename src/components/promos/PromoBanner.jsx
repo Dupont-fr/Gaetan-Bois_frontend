@@ -9,8 +9,8 @@ const PromoBanner = ({ promotion, onExpire }) => {
     <div className='promo-banner stock-limite'>
       <div className='promo-content'>
         <span className='promo-text'>
-          <strong>Spéciale Promo!!</strong> | Gaetan-Bois, Achetez et gagnez des
-          cadeaux incroyables! | {promotion.description}
+          <strong>Spéciale Promo!!</strong> |Chez Gaetan-Bois, Achetez et gagnez
+          des cadeaux incroyables! | {promotion.description}
         </span>
         <span className='promo-timer'>
           Termine dans: <br />

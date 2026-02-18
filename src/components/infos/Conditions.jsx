@@ -32,7 +32,7 @@ const Conditions = () => {
             <ul>
               <li>Ne pas utiliser le site de manière frauduleuse</li>
               <li>Ne pas tenter d'accéder à des zones non autorisées</li>
-              <li>Ne pas diffuser de contenus illégaux ou offensants</li>
+              {/* <li>Ne pas diffuser de contenus illégaux ou offensants</li> */}
               <li>Respecter la propriété intellectuelle</li>
             </ul>
           </section>
@@ -49,7 +49,7 @@ const Conditions = () => {
               <li>
                 Les prix sont indiqués en FCFA (ou autre devise spécifiée)
               </li>
-              <li>Les paiements sont sécurisés</li>
+              {/* <li>Les paiements sont sécurisés</li> */}
               <li>Un devis peut être demandé avant toute commande</li>
             </ul>
           </section>
@@ -115,7 +115,7 @@ const Conditions = () => {
             <h2>10. Loi Applicable</h2>
             <p>
               Ces conditions sont régies par le droit camerounais. Tout litige
-              sera soumis aux tribunaux compétents de Douala, Cameroun.
+              sera soumis aux tribunaux compétents de Yaoundé, Cameroun.
             </p>
           </section>
 
@@ -123,7 +123,13 @@ const Conditions = () => {
             <h2>11. Contact</h2>
             <p>
               Pour toute question concernant ces conditions, vous pouvez nous
-              contacter à l'adresse : <strong>gaetanteguezang@gmail.com</strong>
+              contacter à l'adresse :{' '}
+              <strong>
+                {' '}
+                <a href='mailto:gaetanteguezang@gmail.com'>
+                  gaetanteguezang@gmail.com
+                </a>
+              </strong>
             </p>
           </section>
         </div>

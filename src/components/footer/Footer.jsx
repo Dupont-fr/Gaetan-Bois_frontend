@@ -9,6 +9,15 @@ const Footer = () => {
     setOpenSection(openSection === section ? null : section)
   }
 
+  const handleLinkClick = () => {
+    // Défiler vers le haut avec animation
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
+  }
+
   // Composant pour les icônes SVG uniformes
   const Icon = ({ name, size = 18 }) => {
     const icons = {
@@ -154,22 +163,22 @@ const Footer = () => {
               className={`footer-links ${openSection === 'support' ? 'open' : ''}`}
             >
               <li>
-                <Link to='/conditions'>
+                <Link to='/conditions' onClick={handleLinkClick}>
                   <Icon name='terms' /> Conditions d'utilisation
                 </Link>
               </li>
               <li>
-                <Link to='/confidentialite'>
+                <Link to='/confidentialite' onClick={handleLinkClick}>
                   <Icon name='privacy' /> Confidentialité
                 </Link>
               </li>
               <li>
-                <Link to='/faq'>
+                <Link to='/faq' onClick={handleLinkClick}>
                   <Icon name='faq' /> FAQ
                 </Link>
               </li>
               <li>
-                <Link to='/contact'>
+                <Link to='/contact' onClick={handleLinkClick}>
                   <Icon name='email' /> Nous contacter
                 </Link>
               </li>
@@ -215,7 +224,7 @@ const Footer = () => {
                   <a href='mailto:dupontdjeague@gmail.com'>Dupont-Company</a>
                 </p>
                 <hr></hr>
-                <Link to='/'>
+                <Link to='/' className='home-link' onClick={handleLinkClick}>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='20'
@@ -237,7 +246,6 @@ const Footer = () => {
                   </svg>
                   Accueil
                 </Link>
-                <hr></hr>
               </div>
             </div>
           </div>

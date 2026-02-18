@@ -36,14 +36,14 @@ const Confidentialite = () => {
                 <strong>Données de contact :</strong> numéro de téléphone,
                 adresse postale
               </li>
-              <li>
+              {/* <li>
                 <strong>Données de commande :</strong> historique d'achats,
                 préférences
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <strong>Données de navigation :</strong> adresse IP, type de
                 navigateur, pages visitées
-              </li>
+              </li>*/}
             </ul>
           </section>
 
@@ -97,7 +97,7 @@ const Confidentialite = () => {
             </p>
             <ul>
               <li>Données de commande : 10 ans (obligations comptables)</li>
-              <li>Données de compte client : jusqu'à suppression du compte</li>
+              {/* <li>Données de compte client : jusqu'à suppression du compte</li> */}
               <li>Données marketing : jusqu'à retrait du consentement</li>
             </ul>
           </section>
@@ -141,7 +141,11 @@ const Confidentialite = () => {
             </ul>
             <p>
               Pour exercer vos droits, contactez-nous à :{' '}
-              <strong>privacy@gaetanbois.cm</strong>
+              <strong>
+                <a href='mailto:gaetanteguezang@gmail.com'>
+                  gaetanteguezang@gmail.com{' '}
+                </a>
+              </strong>
             </p>
           </section>
 
@@ -172,10 +176,18 @@ const Confidentialite = () => {
             </p>
             <ul>
               <li>
-                Email : <strong>gaetanteguezang@gmail.com</strong>
+                Email :{' '}
+                <strong>
+                  <a href='mailto:gaetanteguezang@gmail.com'>
+                    gaetanteguezang@gmail.com{' '}
+                  </a>
+                </strong>
               </li>
               <li>
-                Téléphone : <strong>+237 656 173 692</strong>
+                Téléphone :{' '}
+                <strong>
+                  <a href='tel:+237656173692'>+237 656 173 692</a>
+                </strong>
               </li>
               <li>Adresse : Yaoundé, Cameroun</li>
             </ul>

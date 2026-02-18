@@ -12,11 +12,11 @@ const FAQ = () => {
       questions: [
         {
           q: 'Comment passer une commande ?',
-          a: 'Vous pouvez passer commande directement sur notre site en ajoutant des produits au panier, ou nous contacter pour un devis personnalisé sur mesure.',
+          a: "Vous pouvez passer commande directement sur notre site en cliquant sur le boutton commander au dessous d'un produit, ou nous contacter pour un devis personnalisé sur mesure.",
         },
         {
           q: 'Puis-je modifier ma commande après validation ?',
-          a: "Une modification est possible uniquement si la fabrication n'a pas encore commencé. Contactez-nous rapidement au +237 6XX XX XX XX.",
+          a: "Une modification est possible uniquement si la fabrication n'a pas encore commencé. Contactez-nous rapidement au +237 656 173 692.",
         },
         {
           q: 'Comment puis-je suivre ma commande ?',
@@ -31,10 +31,10 @@ const FAQ = () => {
           q: 'Quels moyens de paiement acceptez-vous ?',
           a: 'Nous acceptons les paiements par Mobile Money (Orange Money, MTN Mobile Money), virement bancaire, et paiement à la livraison pour certaines zones.',
         },
-        {
-          q: 'Le paiement en ligne est-il sécurisé ?',
-          a: 'Oui, tous nos paiements en ligne sont sécurisés par des protocoles de cryptage SSL. Vos données bancaires ne sont jamais stockées sur nos serveurs.',
-        },
+        // {
+        //   q: 'Le paiement en ligne est-il sécurisé ?',
+        //   a: 'Oui, tous nos paiements en ligne sont sécurisés par des protocoles de cryptage SSL. Vos données bancaires ne sont jamais stockées sur nos serveurs.',
+        // },
         {
           q: 'Puis-je payer en plusieurs fois ?',
           a: 'Pour les commandes importantes ou sur mesure, nous proposons des facilités de paiement en plusieurs fois. Contactez-nous pour discuter des modalités.',
@@ -50,7 +50,7 @@ const FAQ = () => {
         },
         {
           q: 'Livrez-vous partout au Cameroun ?',
-          a: 'Oui, nous livrons dans tout le Cameroun. Les frais de livraison varient selon la distance. Douala et environs : gratuit pour commandes > 50 000 FCFA.',
+          a: 'Oui, nous livrons dans tout le Cameroun. Les frais de livraison varient selon la distance. Douala et environs : gratuit pour commandes > 100 000 FCFA.',
         },
         {
           q: 'Comment se passe la livraison ?',
@@ -92,23 +92,23 @@ const FAQ = () => {
         },
       ],
     },
-    {
-      category: 'Compte Client',
-      questions: [
-        {
-          q: 'Dois-je créer un compte pour commander ?',
-          a: "Non, vous pouvez commander sans créer de compte. Cependant, un compte vous permet de suivre vos commandes et de bénéficier d'offres exclusives.",
-        },
-        {
-          q: 'Comment modifier mes informations personnelles ?',
-          a: 'Connectez-vous à votre compte et accédez à "Mon profil" pour modifier vos coordonnées, adresse de livraison et préférences.',
-        },
-        {
-          q: "J'ai oublié mon mot de passe",
-          a: 'Cliquez sur "Mot de passe oublié" sur la page de connexion. Vous recevrez un email pour réinitialiser votre mot de passe.',
-        },
-      ],
-    },
+    // {
+    //   category: 'Compte Client',
+    //   questions: [
+    //     {
+    //       q: 'Dois-je créer un compte pour commander ?',
+    //       a: "Non, vous pouvez commander sans créer de compte. Cependant, un compte vous permet de suivre vos commandes et de bénéficier d'offres exclusives.",
+    //     },
+    //     {
+    //       q: 'Comment modifier mes informations personnelles ?',
+    //       a: 'Connectez-vous à votre compte et accédez à "Mon profil" pour modifier vos coordonnées, adresse de livraison et préférences.',
+    //     },
+    //     {
+    //       q: "J'ai oublié mon mot de passe",
+    //       a: 'Cliquez sur "Mot de passe oublié" sur la page de connexion. Vous recevrez un email pour réinitialiser votre mot de passe.',
+    //     },
+    //   ],
+    // },
   ]
 
   const toggle = (index) => {

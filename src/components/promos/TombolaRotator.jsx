@@ -8,7 +8,7 @@ const TombolaRotator = ({ categories, tombolaPromotion }) => {
   useEffect(() => {
     if (!tombolaPromotion || !categories || categories.length === 0) return
 
-    const displayDuration = (tombolaPromotion.dureeAffichage || 10) * 1000
+    const displayDuration = (tombolaPromotion.dureeAffichage || 10) * 2000
 
     const timer = setInterval(() => {
       setShowBanner(false)

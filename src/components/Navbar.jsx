@@ -91,6 +91,28 @@ const Navbar = ({ categories }) => {
     </svg>
   )
 
+  const HomeIcon = () => (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='20'
+      height='20'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      style={{
+        marginRight: '8px',
+        verticalAlign: 'middle',
+        color: '#2964ca',
+      }}
+    >
+      <path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'></path>
+      <polyline points='9 22 9 12 15 12 15 22'></polyline>
+    </svg>
+  )
+
   return (
     <>
       <nav className='navbar'>
@@ -167,6 +189,9 @@ const Navbar = ({ categories }) => {
             <Link to='/faq' className='nav-link'>
               FAQ
             </Link>
+            <Link to='/' className='nav-link'>
+              Accueil
+            </Link>
           </div>
 
           <button className='hamburger' onClick={toggleMenu}>
@@ -233,6 +258,12 @@ const Navbar = ({ categories }) => {
             <span style={{ display: 'flex', alignItems: 'center' }}>
               <QuestionMarkIcon />
               FAQ
+            </span>
+          </Link>
+          <Link to='/' className='menu-link' onClick={closeMenu}>
+            <span style={{ display: 'flex', alignItems: 'center' }}>
+              <HomeIcon />
+              Accueil
             </span>
           </Link>
         </div>

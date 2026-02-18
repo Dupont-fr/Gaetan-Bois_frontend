@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import AnimatedText from './AnimatedText'
 import CountdownTimer from './CountdownTimer'
 import './styles/TombolaBanner.css'
+import { Link } from 'react-router'
 
 const TombolaBanner = ({ promotion }) => {
   const [currentGainIndex, setCurrentGainIndex] = useState(0)
@@ -26,6 +27,11 @@ const TombolaBanner = ({ promotion }) => {
 
   if (!promotion || !promotion.gains || promotion.gains.length === 0)
     return null
+  const handleclick = () => {
+    ;<Link to='/categories' className='nav-link'>
+      Catégories
+    </Link>
+  }
 
   return (
     <div className='tombola-banner'>
@@ -52,7 +58,9 @@ const TombolaBanner = ({ promotion }) => {
         </div>
       </div>
 
-      <button className='tombola-btn'>Cliquez ici</button>
+      <button className='tombola-btn' onClick={handleclick}>
+        Cliquez ici
+      </button>
     </div>
   )
 }

@@ -197,11 +197,11 @@ const CategoryProducts = () => {
                         <div className='product-dimensions'>
                           {[
                             product.dimensions.longueur &&
-                              `L ${(product.dimensions.longueur / 100).toFixed(2)}m`,
+                              `L ${product.dimensions.longueur}m`,
                             product.dimensions.largeur &&
-                              `l ${(product.dimensions.largeur / 100).toFixed(2)}m`,
+                              `l ${product.dimensions.largeur}m`,
                             product.dimensions.hauteur &&
-                              `H ${(product.dimensions.hauteur / 100).toFixed(2)}m`,
+                              `H ${product.dimensions.hauteur}m`,
                           ]
                             .filter(Boolean)
                             .join(' × ')}
