@@ -1,8 +1,19 @@
 import axios from 'axios'
 import { getToken } from './authService'
 
-const adminBaseUrl = '/api/admin/promotions'
-const publicBaseUrl = '/api/promotions'
+// const adminBaseUrl = '/api/admin/promotions'
+
+const adminBaseUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://gaetan-bois.onrender.com/api/admin/promotions'
+    : '/api/admin/promotions'
+
+// const publicBaseUrl = '/api/promotions'
+
+const publicBaseUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://gaetan-bois.onrender.com/api/promotions'
+    : '/api/promotions'
 
 const getConfig = () => ({
   headers: {

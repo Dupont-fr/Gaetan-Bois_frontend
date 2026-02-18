@@ -1,4 +1,9 @@
-const API_URL = '/api/reviews'
+// const API_URL = '/api/reviews'
+
+const API_URL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://gaetan-bois.onrender.com/api/reviews'
+    : '/api/reviews'
 
 // ============================================
 // ROUTES PUBLIQUES (Visiteurs)

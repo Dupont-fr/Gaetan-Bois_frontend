@@ -1,8 +1,17 @@
 import axios from 'axios'
 import { getToken } from './authService'
 
-const baseUrl = '/api/admin/categories'
-const publicBaseUrl = '/api/categories'
+// const baseUrl = '/api/admin/categories'
+const baseUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://gaetan-bois.onrender.com/api/admin/categories'
+    : '/api/admin/categories'
+
+// const publicBaseUrl = '/api/categories'
+const publicBaseUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://gaetan-bois.onrender.com/api/categories'
+    : '/api/categories'
 
 // Configuration pour inclure le token dans les requêtes
 const getConfig = () => ({

@@ -24,6 +24,7 @@ const ManageImages = () => {
   const [currentImage, setCurrentImage] = useState(null)
   const [tempImageUrl, setTempImageUrl] = useState(null)
   const [tempPublicId, setTempPublicId] = useState(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   // Formulaire pour les infos produit
   const [productForm, setProductForm] = useState({
@@ -178,8 +179,9 @@ const ManageImages = () => {
 
   const handleUpdateProduct = async (e) => {
     e.preventDefault()
+    if (isSubmitting) return
     setError(null)
-
+    setIsSubmitting(true)
     try {
       const updateData = {
         nom: productForm.nom,
@@ -205,6 +207,8 @@ const ManageImages = () => {
     } catch (err) {
       console.error('Erreur modification:', err)
       setError(err.message)
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -662,6 +666,7 @@ const ManageImages = () => {
               resetForm()
             }}
             closeIcon={<CrossIcon />}
+            isSubmitting={isSubmitting}
           />
         )}
 
@@ -684,6 +689,7 @@ const ManageImages = () => {
               resetForm()
             }}
             closeIcon={<CrossIcon />}
+            isSubmitting={isSubmitting}
           />
         )}
 
@@ -903,6 +909,13 @@ const ProductFormModal = ({
           <div className='modal-actions'>
             <button type='button' className='btn-secondary' onClick={onClose}>
               Annuler
+              {/* </button>
+            <button type='submit' className='btn-primary'>
+              {typeof title === 'object' &&
+              title.props.children[1] === 'Modifier'
+                ? 'Modifier'
+                : 'Ajouter'}
+            </button> */}
             </button>
             <button type='submit' className='btn-primary'>
               {typeof title === 'object' &&

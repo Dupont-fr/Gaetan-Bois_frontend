@@ -1,6 +1,11 @@
 import axios from 'axios'
 
-const publicBaseUrl = '/api/categories'
+// const publicBaseUrl = '/api/categories'
+
+const publicBaseUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://gaetan-bois.onrender.com/api/categories'
+    : '/api/categories'
 
 // ============================================
 // ROUTES PUBLIQUES (Sans authentification)

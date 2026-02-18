@@ -1,7 +1,11 @@
 import axios from 'axios'
 import { getToken } from './authService'
 
-const baseUrl = '/api/admin/categories'
+// const baseUrl = '/api/admin/categories'
+const baseUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://gaetan-bois.onrender.com/api/admin/categories'
+    : '/api/admin/categories'
 
 // Configuration pour inclure le token
 const getConfig = () => ({
@@ -36,7 +40,7 @@ export const addImageToCategory = async (categoryId, imageData) => {
 // Modifier une image
 export const updateImage = async (imageId, imageData) => {
   const response = await axios.put(
-     `/api/admin/categories/images/${imageId}`,
+    `/api/admin/categories/images/${imageId}`,
     imageData,
     getConfig(),
   )
@@ -46,7 +50,7 @@ export const updateImage = async (imageId, imageData) => {
 // Supprimer une image
 export const deleteImage = async (imageId) => {
   const response = await axios.delete(
-     `/api/admin/categories/images/${imageId}`,
+    `/api/admin/categories/images/${imageId}`,
     getConfig(),
   )
   return response.data

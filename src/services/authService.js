@@ -1,6 +1,10 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3000/api/admin'
+// const API_URL = 'http://localhost:3000/api/admin'
+const API_URL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://gaetan-bois.onrender.com/api/admin'
+    : 'http://localhost:3000/api/admin'
 
 // ============================================
 // CONFIGURATION AXIOS (avec credentials pour les cookies)
@@ -14,8 +18,8 @@ const apiClient = axios.create({
   baseURL: API_URL,
   withCredentials: true,
   headers: {
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 })
 
 // ============================================
@@ -72,12 +76,12 @@ export const removeAdminFromStorage = () => {
 export const loginAdmin = async (credentials) => {
   try {
     const response = await apiClient.post('/login', credentials)
-    
+
     // Sauvegarder les infos admin (le token est dans le cookie)
     if (response.data.success && response.data.admin) {
       setAdminToStorage(response.data.admin)
     }
-    
+
     return response.data
   } catch (error) {
     const message = error.response?.data?.message || 'Identifiants incorrects'
@@ -89,11 +93,11 @@ export const loginAdmin = async (credentials) => {
 export const logoutAdmin = async () => {
   try {
     const response = await apiClient.post('/logout')
-    
+
     // Supprimer du localStorage
     removeToken()
     removeAdminFromStorage()
-    
+
     return response.data
   } catch (error) {
     // Même en cas d'erreur, on supprime du localStorage
@@ -107,12 +111,12 @@ export const logoutAdmin = async () => {
 export const checkAuthStatus = async () => {
   try {
     const response = await apiClient.get('/me')
-    
+
     // Mettre à jour le localStorage
     if (response.data.success && response.data.admin) {
       setAdminToStorage(response.data.admin)
     }
-    
+
     return response.data
   } catch (error) {
     // Session invalide, nettoyer le localStorage

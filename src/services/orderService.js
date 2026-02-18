@@ -1,8 +1,19 @@
 import axios from 'axios'
 import { getToken } from './authService'
 
-const API_URL = '/api/orders'
-const adminApiUrl = '/api/admin/orders'
+// const API_URL = '/api/orders'
+
+const API_URL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://gaetan-bois.onrender.com/api/orders'
+    : '/api/orders'
+
+// const adminApiUrl = '/api/admin/orders'
+
+const adminApiUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://gaetan-bois.onrender.com/api/admin/orders'
+    : '/api/admin/orders'
 
 const getAuthHeaders = () => {
   const token = getToken()
